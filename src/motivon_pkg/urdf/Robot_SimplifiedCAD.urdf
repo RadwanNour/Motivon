@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro"
+  name="Robot_SimplifiedCAD">
+  
+  <!-- Mesh file paths - resolved by xacro -->
+  <xacro:arg name="mesh_path" default="package://motivon_pkg/meshes"/>
+  <xacro:property name="mesh_dir" value="$(arg mesh_path)"/>
+  
+  <link
+    name="RobotBody">
+    <inertial>
+      <origin
+        xyz="-0.00194128965386214 -0.00169973171907609 1.12803542219875E-05"
+        rpy="0 0 0" />
+      <mass
+        value="8.46222495283398" />
+      <inertia
+        ixx="0.106882226899071"
+        ixy="1.59175532273251E-05"
+        ixz="3.65829777385585E-05"
+        iyy="0.111495814601355"
+        iyz="-1.14760791044805E-05"
+        izz="0.199534690022745" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/RobotBody.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/RobotBody.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="FR_Wheel">
+    <inertial>
+      <origin
+        xyz="-1.35380187032963E-07 1.3044598012879E-08 -0.00153734977346254"
+        rpy="0 0 0" />
+      <mass
+        value="0.140891136586665" />
+      <inertia
+        ixx="2.91186961732181E-05"
+        ixy="7.506534078841E-11"
+        ixz="-3.11955015180212E-12"
+        iyy="2.91197299659932E-05"
+        iyz="-2.5660125191117E-11"
+        izz="2.87546284127344E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/FR_Wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/FR_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FR_Joint"
+    type="continuous">
+    <origin
+      xyz="0.1825 0.26663 -0.126"
+      rpy="1.5708 0 0" />
+    <parent
+      link="RobotBody" />
+    <child
+      link="FR_Wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="FL_Wheel">
+    <inertial>
+      <origin
+        xyz="-1.3413E-07 9.2932E-07 0.001594"
+        rpy="0 0 0" />
+      <mass
+        value="0.1409" />
+      <inertia
+        ixx="2.9121E-05"
+        ixy="1.8912E-10"
+        ixz="2.0882E-10"
+        iyy="2.9121E-05"
+        iyz="7.4474E-11"
+        izz="2.8759E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/FL_Wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/FL_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="FL_Joint"
+    type="continuous">
+    <origin
+      xyz="0.1825 -0.26647 -0.128"
+      rpy="1.5708 0 0" />
+    <parent
+      link="RobotBody" />
+    <child
+      link="FL_Wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="RR_Wheel">
+    <inertial>
+      <origin
+        xyz="1.7064E-07 9.9176E-07 -0.001594"
+        rpy="0 0 0" />
+      <mass
+        value="0.1409" />
+      <inertia
+        ixx="2.9121E-05"
+        ixy="-1.9232E-10"
+        ixz="1.9835E-10"
+        iyy="2.9121E-05"
+        iyz="-5.0191E-11"
+        izz="2.8759E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/RR_Wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/RR_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RR_Joint"
+    type="continuous">
+    <origin
+      xyz="-0.1825 0.26663 -0.126"
+      rpy="1.5708 0 0" />
+    <parent
+      link="RobotBody" />
+    <child
+      link="RR_Wheel" />
+    <axis
+      xyz="0 0 1" />
+  </joint>
+  <link
+    name="RL_Wheel">
+    <inertial>
+      <origin
+        xyz="1.79561944424478E-07 -4.74010360962396E-08 0.00153733062551561"
+        rpy="0 0 0" />
+      <mass
+        value="0.14089087181702" />
+      <inertia
+        ixx="2.91186545378361E-05"
+        ixy="-8.89038892793646E-11"
+        ixz="-3.27286746091504E-11"
+        iyy="2.91196797719684E-05"
+        iyz="2.1092084135739E-11"
+        izz="2.87545869025681E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/RL_Wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/RL_Wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="RL_Joint"
+    type="continuous">
+    <origin
+      xyz="-0.1825 -0.26647 -0.128"
+      rpy="1.5708 0 0" />
+    <parent
+      link="RobotBody" />
+    <child
+      link="RL_Wheel" />
+    <axis
+      xyz="0 0 -1" />
+  </joint>
+  <link
+    name="Lid">
+    <inertial>
+      <origin
+        xyz="-0.0088385 -0.011264 -0.012257"
+        rpy="0 0 0" />
+      <mass
+        value="0.71976" />
+      <inertia
+        ixx="0.011792"
+        ixy="-1.3048E-07"
+        ixz="1.8438E-07"
+        iyy="0.0044785"
+        iyz="-7.1647E-07"
+        izz="0.0074215" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/Lid.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="${mesh_dir}/Lid.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="Lid_Joint"
+    type="prismatic">
+    <origin
+      xyz="0.0010809 0.00090911 0.2"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="RobotBody" />
+    <child
+      link="Lid" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      lower="0"
+      upper="180"
+      effort="2"
+      velocity="2" />
+  </joint>
+
+  <!-- Center dummy link -->
+  <link name="center_dummy_link">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+      <material name="red">
+        <color rgba="1 0 0 0.3"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="center_dummy_joint" type="fixed">
+    <parent link="RobotBody"/>
+    <child link="center_dummy_link"/>
+    <origin xyz="0 0 0.1" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Revolving dummy link 1 (around Z axis) -->
+  <link name="revolving_dummy_1">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0.05 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder radius="0.01" length="0.1"/>
+      </geometry>
+      <material name="blue">
+        <color rgba="0 0 1 0.5"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.01" length="0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="revolving_joint_1" type="continuous">
+    <parent link="center_dummy_link"/>
+    <child link="revolving_dummy_1"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Revolving dummy link 2 (around Z axis) -->
+  <link name="revolving_dummy_2">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0.05 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <cylinder radius="0.01" length="0.1"/>
+      </geometry>
+      <material name="green">
+        <color rgba="0 1 0 0.5"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.01" length="0.1"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="revolving_joint_2" type="continuous">
+    <parent link="center_dummy_link"/>
+    <child link="revolving_dummy_2"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+
+  <!-- Fixed dummy link 1 -->
+  <link name="fixed_dummy_1">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="yellow">
+        <color rgba="1 1 0 0.5"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="fixed_joint_1" type="fixed">
+    <parent link="RobotBody"/>
+    <child link="fixed_dummy_1"/>
+    <origin xyz="0.1 0.15 0.08" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Fixed dummy link 2 -->
+  <link name="fixed_dummy_2">
+    <inertial>
+      <mass value="0.01"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-6" ixy="0" ixz="0" iyy="1e-6" iyz="0" izz="1e-6"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+      <material name="cyan">
+        <color rgba="0 1 1 0.5"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.05 0.05 0.05"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="fixed_joint_2" type="fixed">
+    <parent link="RobotBody"/>
+    <child link="fixed_dummy_2"/>
+    <origin xyz="-0.1 0.15 0.08" rpy="0 0 0"/>
+  </joint>
+
+  <!-- ROS2 Control Block -->
+  <ros2_control name="RobotSystem" type="system">
+    <hardware>
+      <plugin>mock_components/GenericSystem</plugin>
+    </hardware>
+    <joint name="FR_Joint">
+      <command_interface name="velocity">
+        <param name="min">-10</param>
+        <param name="max">10</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="FL_Joint">
+      <command_interface name="velocity">
+        <param name="min">-10</param>
+        <param name="max">10</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="RR_Joint">
+      <command_interface name="velocity">
+        <param name="min">-10</param>
+        <param name="max">10</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+    </joint>
+    <joint name="RL_Joint">
+      <command_interface name="velocity">
+        <param name="min">-10</param>
+        <param name="max">10</param>
+      </command_interface>
+      <state_interface name="velocity"/>
+      <state_interface name="position"/>
+    </joint>
+  </ros2_control>
+
+  <!-- Gazebo Plugin for ROS2 Control -->
+  <gazebo>
+    <plugin filename="gz_ros2_control-system"
+      name="gz_ros2_control::GazeboSimROS2ControlPlugin">
+    </plugin>
+  </gazebo>
+
+  <!-- Adding the sensor IMU -->
+  <link name="imu_link">
+    <inertial>
+      <mass value="0.05"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0"
+               iyy="1e-5" iyz="0"
+               izz="1e-5"/>
+    </inertial>
+    <visual>
+      <geometry>
+        <box size="0.02 0.02 0.01"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <box size="0.02 0.02 0.01"/>
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="imu_joint" type="fixed">
+    <parent link="RobotBody"/>
+    <child link="imu_link"/>
+    <origin xyz="0 0 0.05" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Adding IMU Sensor Plugin -->
+  <gazebo reference="imu_link">
+    <sensor name="imu_sensor" type="imu">
+      <always_on>true</always_on>
+      <update_rate>50</update_rate>
+      <topic>imu</topic>
+      <gz_frame_id>imu_link</gz_frame_id>
+      <plugin
+        filename="gz-sim-imu-system"
+        name="gz::sim::systems::Imu"/>
+    </sensor>
+  </gazebo>
+
+  <!-- Adding Ultrasonic Sensor Link -->
+  <link name="ultrasonic_link">
+    <visual>
+      <geometry>
+        <cylinder radius="0.03" length="0.05"/>
+      </geometry>
+    </visual>
+    <collision>
+      <geometry>
+        <cylinder radius="0.03" length="0.05"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <mass value="0.1"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <inertia ixx="1e-5" ixy="0" ixz="0"
+               iyy="1e-5" iyz="0"
+               izz="1e-5"/>
+    </inertial>
+  </link>
+
+  <joint name="ultrasonic_joint" type="fixed">
+    <parent link="RobotBody"/>
+    <child link="ultrasonic_link"/>
+    <origin xyz="0.15 0 0.07" rpy="0 0 0"/>
+  </joint>
+
+  <!-- Adding Ultrasonic Sensor Plugin -->
+  <gazebo reference="ultrasonic_link">
+    <sensor name="lidar_sensor" type="gpu_lidar">
+      <update_rate>50</update_rate>
+      <topic>scan</topic>
+      <ray>
+        <scan>
+          <horizontal>
+            <samples>640</samples>
+            <resolution>1</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>0</max_angle>
+          </horizontal>
+          <vertical>
+            <samples>1</samples>
+            <resolution>0.01</resolution>
+            <min_angle>0</min_angle>
+            <max_angle>0</max_angle>
+          </vertical>
+        </scan>
+        <range>
+          <min>0.08</min>
+          <max>10.0</max>
+          <resolution>0.01</resolution>
+        </range>
+      </ray>
+      <always_on>1</always_on>
+      <visualize>true</visualize>
+    </sensor>
+  </gazebo>
+</robot>
